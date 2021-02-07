@@ -1,11 +1,9 @@
-console.log(input.rotation(Rotation.Roll))
+console.log(input.acceleration(Dimension.Z))
 while (true) {
-    if (input.rotation(Rotation.Roll) < 0) {
+    if (input.acceleration(Dimension.Z) > 0 && input.lightLevel() < 10) {
         light.setAll(light.rgb(255, 255, 255))
-    } else if (input.lightLevel() < 10) {
+    } else if (input.lightLevel() > 10) {
         light.clear()
-        input.acceleration(Dimension.Z)
-        input.rotation(Rotation.Pitch)
     }
     
 }
